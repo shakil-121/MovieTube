@@ -22,9 +22,9 @@ const AllMovies = () => {
         <h2 className="text-white text-center">
           <RiMovie2Fill></RiMovie2Fill>Top Watch Movies
         </h2>
-        <div className="md-row  py-5" data-aos="zoom-in-up"
+        <div className="row  py-5 ps-5" data-aos="zoom-in-up"
      data-aos-easing="linear"
-     data-aos-duration="1500">
+     data-aos-duration="500">
           {
             //single movie info get by map this movies array
             movies.map((movie) => (
