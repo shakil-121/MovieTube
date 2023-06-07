@@ -1,0 +1,8 @@
+.card:hover{ 
+    border: 15px solid rgb(252, 0, 0); 
+    transition: 1000ms;
+} 
+.view-btn:hover{
+background-color: #030303 !important; 
+color: rgb(255, 255, 255) !important;
+}
