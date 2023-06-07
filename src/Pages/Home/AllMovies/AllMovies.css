@@ -1,0 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap');
+.MovieSection{
+    background-image: url(../../../assets/banner/tv_series_bg.jpg); 
+    font-family: 'Poppins', sans-serif;
+}

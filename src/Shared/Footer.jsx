@@ -4,13 +4,13 @@ import Container from "react-bootstrap/Container";
 
 const Footer = () => {
   return (
-    <div style={{ height: "200px", backgroundColor: "black",fontFamily:"roboto" }}>
+    <div style={{ height: "220px", backgroundColor: "black",fontFamily:"roboto" }}>
       <Container>
         <img src={logo} style={{ height: "120px" }} alt="" />
-        <h5 className="ps-3 text-white">
+        <h6 className="ps-3 text-white">
           This is a best online movie <br /> watching site .
-        </h5>
-        <p className="text-center text-white">
+        </h6>
+        <p className="text-center text-white py-2">
           Copyright©{" "}
           <a className="text-white" href="https://www.linkedin.com/in/md-shahadat-shakil/">
             SHAHADAT HOSSAIN

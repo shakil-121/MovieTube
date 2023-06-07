@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap');
+.MovDetails{
+    background-image: url(../../../assets/banner/movie_details_bg.jpg); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    font-family: 'Poppins', sans-serif; 
+    height:100%;
+}
+

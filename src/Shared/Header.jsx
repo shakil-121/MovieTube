@@ -22,7 +22,7 @@ const Header = () => {
             <Nav className="me-auto ">
             </Nav>
             <Nav className="d-flex align-items-center">
-            <Nav.Link className="fw-semibold" href="#deets">My Booking</Nav.Link>
+            <Nav.Link className="fw-semibold" href="/booking">My Booking</Nav.Link>
               <Nav.Link eventKey={2} href="#memes">
                 <Button className="px-5 rounded-5 border-0 fw-bold" style={{backgroundColor:"red",fontFamily:"roboto"}}>Subscribe</Button>
               </Nav.Link>

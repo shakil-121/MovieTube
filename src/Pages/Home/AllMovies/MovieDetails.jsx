@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Container, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import { FaRegBookmark } from "react-icons/fa"; 
-import Modal from 'react-bootstrap/Modal';
+import { FaRegBookmark,FaCalendar,FaClock } from "react-icons/fa"; 
+import Modal from 'react-bootstrap/Modal'; 
+import "./MovieDetails.css" 
+import { addToDb } from "../../../Utilites/LocalStorage"; 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const MovieDetails = () => {
   const [movies, setMovies] = useState([]);
@@ -24,24 +28,39 @@ const MovieDetails = () => {
  const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = () => setShow(true); 
+
+
+// for local storage 
+  const [cart,setCart]=useState([]) 
+
+  const addToLocal=(job)=>{ 
+   const newcart=[...cart,job]; 
+   setCart(newcart); 
+   addToDb(job.id) 
+   toast("Booking Successfully")
+  }
 
   return (
-    <Container>
+   <div className="MovDetails">
+     <Container>
       <div
-        className="d-flex my-5"
-        style={{ height: "400px", width: "100%", border: "2px #000" }}
+        className="md-d-flex py-3"
+        style={{ height: "400px", width:"100%", border: "2px #000" }}
       >
-        <img src={mov?.image.original} alt="" />
-        <div className="ps-4">
+        <img className="rounded-2" src={mov?.image.original} alt="" />
+        <div className="ps-4 pt-5 text-white">
           <h1>{mov?.name}</h1>
-          <p>Premiered: {mov?.premiered}</p>
-          <p>LAnguage: {mov?.language}</p>
+          <div className="d-flex">
+          <p><FaCalendar style={{color:"red"}}></FaCalendar> Premiered: {mov?.premiered}</p>
+          <p className="ps-4">Language: {mov?.language}</p>
+          <p className="ps-4"> <FaClock style={{color:"red"}}></FaClock> {mov?.averageRuntime}min</p>
+          </div>
           <p>Details: {mov?.summary}</p>
 
           {/* modal for ticket booking  */}
           <>
-            <Button variant="danger" onClick={handleShow}>
+            <Button style={{backgroundColor:"red",border:"none"}} onClick={handleShow}>
               <FaRegBookmark></FaRegBookmark> Book Ticket
             </Button>
 
@@ -52,7 +71,7 @@ const MovieDetails = () => {
               <Modal.Body>
                <div>
                <h3>Movie Name : {mov?.name}</h3> 
-                <p>Premiered :{mov?.premiered}</p>
+                <p><FaCalendar style={{color:"red"}}></FaCalendar> Premiered :{mov?.premiered}</p>
                 <p>Language :{mov?.language}</p>
                 <p>Rating :{mov?.rating.average}</p>
                </div>
@@ -66,7 +85,7 @@ const MovieDetails = () => {
                 <Button variant="secondary" onClick={handleClose}>
                   Close
                 </Button>
-                <Button variant="danger" onClick={handleClose}>
+                <Button onClick={()=>addToLocal(mov)} style={{backgroundColor:"red",border:"none"}}>
                     Book Now
                 </Button>
               </Modal.Footer>
@@ -74,7 +93,9 @@ const MovieDetails = () => {
           </>
         </div>
       </div>
-    </Container>
+    </Container> 
+    <ToastContainer></ToastContainer>
+   </div>
   );
 };
 

@@ -9,6 +9,7 @@ import {
 import Home from './Pages/Home/Home/Home';
 import Main from './Layout/Main';
 import MovieDetails from './Pages/Home/AllMovies/MovieDetails';
+import Booking from './Pages/Home/Booking/Booking';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path:"/moviedetails/:id", 
         element:<MovieDetails></MovieDetails>
+      },
+      {
+        path:"/booking", 
+        element:<Booking></Booking>
       }
     ]
   },

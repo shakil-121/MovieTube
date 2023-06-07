@@ -1,0 +1,5 @@
+.Movie-Card:hover{ 
+    box-shadow: -6px -1px 63px -12px rgba(255,0,0,1);
+-webkit-box-shadow: -6px -1px 63px -12px rgba(255,0,0,1);
+-moz-box-shadow: -6px -1px 63px -12px rgba(255,0,0,1);
+}
